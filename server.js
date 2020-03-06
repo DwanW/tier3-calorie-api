@@ -18,6 +18,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', (req, res) =>{ res.send("it is working!")});
 app.post('/', (req, res) => {
     if (req.body.name.trim().length >= 3) {
         db.select('name', 'portion_default', 'portion_amount', 'portion_display_name', 'increment', 'calories')
